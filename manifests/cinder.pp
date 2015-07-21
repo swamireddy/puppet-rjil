@@ -65,6 +65,7 @@ class rjil::cinder (
   $rewrites                = undef,
   $headers                 = undef,
   $use_default_quota_class = false,
+  $enable_v2_api           = false,
 ) {
 
   ######################## Service Blockers and Ordering
