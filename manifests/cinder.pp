@@ -65,6 +65,7 @@ class rjil::cinder (
   $rewrites                = undef,
   $headers                 = undef,
   $use_default_quota_class = false,
+  $enable_v1_api           = false,
 ) {
 
   ######################## Service Blockers and Ordering
@@ -115,6 +116,11 @@ class rjil::cinder (
   # Cinder default quotas read from the config file.
 
   cinder_config { 'DEFAULT/use_default_quota_class': value => $use_default_quota_class }
+
+  ##
+  # Cinder enable_v1_api false for disable the V1 APIs
+
+  cinder_config { 'DEFAULT/enable_v1_api': value => $enable_v1_api }
 
   ## Configure apache reverse proxy
   apache::vhost { 'cinder':
